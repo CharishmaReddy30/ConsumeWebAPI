@@ -1,24 +1,19 @@
-﻿@model List<CarViewModel>
-@{
-    ViewData["Title"] = "Index";
-}
-
-<h2>Index</h2>
+﻿@model IEnumerable<System.Linq.IGrouping<string, CarViewModel>>
 
 <div>
     <ul>
         @foreach (var item in Model)
         {
-        <ul>
-            <li>@Html.DisplayFor(m => item.Make)</li>
+            <li>@Html.DisplayFor(m => item.Key)</li>
             <ul>
-                <li>@Html.DisplayFor(m => item.Model)</li>
-                <ul>
-                    <li>@Html.DisplayFor(m => item.Name)</li>
-                </ul>
+                @foreach (var m in item)
+                {
+                    <li>@Html.DisplayFor(t => m.Model)</li>
+                    <ul>
+                        <li>@Html.DisplayFor(t => m.Name)</li>
+                    </ul>
+                }
             </ul>
-        </ul>
         }
     </ul>
-    
 </div>
