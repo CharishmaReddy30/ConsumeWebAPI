@@ -1,0 +1,24 @@
+﻿@model List<CarViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+        <ul>
+            <li>@Html.DisplayFor(m => item.Make)</li>
+            <ul>
+                <li>@Html.DisplayFor(m => item.Model)</li>
+                <ul>
+                    <li>@Html.DisplayFor(m => item.Name)</li>
+                </ul>
+            </ul>
+        </ul>
+        }
+    </ul>
+    
+</div>
