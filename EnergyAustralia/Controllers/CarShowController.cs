@@ -35,8 +35,8 @@ namespace EnergyAustralia.Controllers
 
                 }
             }
-            var res = carShowsList.OrderBy(c => c.Make).GroupBy(x => x.Make).ToList();
-            return View(res);
+            var cars = carShowsList.OrderBy(c => c.Make).GroupBy(x => x.Make).ToList();
+            return View(cars);
         }
     }
 }
